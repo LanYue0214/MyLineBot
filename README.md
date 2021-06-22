@@ -100,11 +100,14 @@
         app.run(host='0.0.0.0', port=port) #0.0.0.0 all people could connect to this robot
 
 ## Results 
-<img src="https://i.imgur.com/8sIW7jW.jpg" width="300" height="600">
-<img src="https://i.imgur.com/a8HGJ7i.jpg" width="300" height="600">
-<img src="https://i.imgur.com/uf9yv05.jpg" width="300" height="600">
-<img src="https://i.imgur.com/jQ1fNCR.jpg" width="300" height="600">
-<img src="https://i.imgur.com/RM7TzeJ.jpg" width="300" height="600">
+原始畫面:
+> <img src="https://i.imgur.com/8sIW7jW.jpg" width="300" height="600">
+點擊右下選單的關鍵字那張圖:
+>出現的所有關鍵字
+> <img src="https://i.imgur.com/uf9yv05.jpg" width="300" height="600">
+> <img src="https://i.imgur.com/jQ1fNCR.jpg" width="300" height="600">
+> <img src="https://i.imgur.com/RM7TzeJ.jpg" width="300" height="600">
+
 ## References
 * 參考網址
     * https://marketingliveincode.com/?page_id=2532
