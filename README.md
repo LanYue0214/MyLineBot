@@ -102,13 +102,18 @@
 ## Results 
 原始畫面:
 > <img src="https://i.imgur.com/8sIW7jW.jpg" width="300" height="600">
-點擊右下選單的關鍵字那張圖:
->出現的所有關鍵字
+點擊下方選單:
+>點擊右下的關鍵字那張圖，會出現的所有關鍵字
 >> <img src="https://i.imgur.com/jQ1fNCR.jpg" width="300" height="600">
 >> <img src="https://i.imgur.com/a8HGJ7i.jpg" width="300" height="600">
 >> <img src="https://i.imgur.com/uf9yv05.jpg" width="300" height="600">
->典籍
+>點擊中下選單的最新消息，會出現蘇媽發布會的影片:
 >> <img src="https://i.imgur.com/RM7TzeJ.jpg" width="300" height="600">
+>點擊左下選單的買顯卡，會出現商場，點擊相對的商場會連結到該網站:
+>> <img src="https://i.imgur.com/6QTCdiA.jpg" width="300" height="600">
+>> <img src="https://i.imgur.com/oKui4yy.jpg" width="300" height="600">
+
+
 
 ## References
 * 參考網址
