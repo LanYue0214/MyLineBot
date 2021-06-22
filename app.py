@@ -70,6 +70,11 @@ def handle_message(event):
             preview_image_url='https://i.imgur.com/yebDeyq.png'
         )
         line_bot_api.reply_message(event.reply_token, video_message)
+    elif re.match('test',message):
+        message = TextSendMessage(
+            text = 'cry\ncry2'
+        )
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
 
