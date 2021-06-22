@@ -75,7 +75,7 @@ def handle_message(event):
                 "type": "text",
                 "text": "https://www.coolpc.com.tw/tw/product-category/gpu/"
         }]
-        line_bot_api.reply_message(event.reply_token,TextSendMessage('https://www.coolpc.com.tw/tw/product-category/gpu/'))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=message))
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
 
