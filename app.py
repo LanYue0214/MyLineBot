@@ -44,20 +44,13 @@ def handle_message(event):
     #line_bot_api.reply_message(event.reply_token,message)
     message = text=event.message.text
     if re.match('原價屋',message):
-        imagemap_message = ImagemapSendMessage(
-             base_url='https://i.imgur.com/wpM584d.jpg',
-             alt_text='this is an imagemap',
-             base_size=BaseSize(height=1040, width=1040),
-             actions=[
-                 MessageImagemapAction(# 文字訊息
-                     text='戳我幹嘛！',
-                     area=ImagemapArea(
-                         x=520, y=0, width=520, height=1040
-                     )
-                 )
-             ]
-         )
-        line_bot_api.reply_message(event.reply_token,TextSendMessage('才不告訴你哩！'))
+        try:
+            message = ImageSendMessage(
+                original_content_url="https://i.imgur.com/J90bQis.jpg"
+                preview_image_url="https://i.imgur.com/J90bQis.jpg"
+            )
+        except:
+            line_bot_api.reply_message(event.reply_token,TextSendMessage('Error!'))
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(message))
 
