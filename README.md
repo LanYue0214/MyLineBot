@@ -4,7 +4,11 @@
 * 加入LINE好友
 * ![](https://i.imgur.com/qJvS6Gu.png)
 * 利用提供的關鍵字功能，輸入後可得到需要的資訊
+
 ![](https://i.imgur.com/LGNnhSQ.png)
+* Github連結到Heroku，再由Heroku Server跟Line Developer做溝通
+
+*當30分鐘以上沒使用Linebot，Heroku Server 會進入休眠模式，重啟時需要幾秒的等待時間
 
 ## Introduction 
 顯卡不但能夠用在遊戲中呈現像是現實生活中的光影，還能用來做研究像是深度學習，甚至日以繼夜的挖礦之途，更不用說那發家致富的可能性，顯卡的珍貴已不用多提，人人都該至少有一張顯卡，如果能有兩張以上，那是多麼令人愉悅的一件事啊，所以時時刻刻了解顯卡的價格是必須的。以下為LINEBOT包含的功能:
