@@ -40,27 +40,40 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     message = event.message.text
-    if re.match('原價屋',message):
+    if re.match('商場',message):
+            buttons_template_message = TemplateSendMessage(
+            alt_text='這個看不到',
+            template=ButtonsTemplate(
+                thumbnail_image_url='https://i.imgur.com/wpM584d.jpg',
+                title='顯卡買起來啦',
+                text='選單功能－TemplateSendMessage',
+                actions=[
+                    URIAction(
+                        label='原價屋',
+                        uri='https://www.coolpc.com.tw/tw/product-category/gpu/'
+                    ),
+                    URIAction(
+                        label='Pchome',
+                        uri='https://24h.pchome.com.tw/region/DRAD'
+                    ),
+                    URIAction(
+                        label='蝦皮',
+                        uri='https://shopee.tw/search?keyword=%E9%A1%AF%E7%A4%BA%E5%8D%A1'
+                    )
+                ]
+            )
+        )
+            line_bot_api.reply_message(event.reply_token, buttons_template_message)
+    elif re.match('Pchome',message):
         try:
             re_message = ImageSendMessage(
-                #base_url="https://i.imgur.com/J90bQis.jpg",
-                #base_size=BaseSize(height=1040, width=1040)
-                original_content_url="https://i.imgur.com/J90bQis.jpg",
-                preview_image_url="https://i.imgur.com/J90bQis.jpg"
+                original_content_url="https://i.imgur.com/b2rFB7q.png",
+                preview_image_url="https://i.imgur.com/b2rFB7q.png"
             )
             line_bot_api.reply_message(event.reply_token,re_message)
         except:
             line_bot_api.reply_message(event.reply_token,TextSendMessage('Error!'))
-    elif re.match('@Pchome',message):
-        try:
-            re_message = ImageSendMessage(
-                base_url="https://i.imgur.com/b2rFB7q.png",
-                base_size=BaseSize(height=1040, width=1040)
-            )
-            line_bot_api.reply_message(event.reply_token,re_message)
-        except:
-            line_bot_api.reply_message(event.reply_token,TextSendMessage('Error!'))
-    elif message == '@蝦皮':
+    elif message == '蝦皮':
         re_message = TextSendMessage(
             text = "我是蝦皮啦!"
         )
