@@ -1,5 +1,5 @@
 # 我的LINEBOT 顯卡價格
-一個方便我差看顯卡的LINE BOT
+一個方便我查詢顯卡價格的LINEBOT
 ## Build Process 
 * 加入LINE好友
 * ![](https://i.imgur.com/qJvS6Gu.png)
