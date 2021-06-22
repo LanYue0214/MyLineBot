@@ -60,14 +60,15 @@
     * https://marketingliveincode.com/?page_id=2532
 * API
     * LINEBOT
+    
 * packages
-        * line-bot-sdk
-        * bs4
-        * flask
-        * pymongo
-        * datetime
-        * pandas
-        * SnowNLP
-        * emoji
-        * pyshorteners
-        * scipy
+    * line-bot-sdk
+    * bs4
+    * flask
+    * pymongo
+    * datetime  
+    * pandas
+    * SnowNLP
+    * emoji
+    * pyshorteners
+    * scipy
