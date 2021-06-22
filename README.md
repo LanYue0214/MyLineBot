@@ -101,11 +101,10 @@
 
 ## Results 
 <img src="https://i.imgur.com/8sIW7jW.jpg" width="300" height="600">
-
-![](https://i.imgur.com/a8HGJ7i.jpg)
-![](https://i.imgur.com/uf9yv05.jpg)
-![](https://i.imgur.com/jQ1fNCR.jpg)
-![](https://i.imgur.com/RM7TzeJ.jpg)
+<img src="https://i.imgur.com/a8HGJ7i.jpg" width="300" height="600">
+<img src="https://i.imgur.com/uf9yv05.jpg" width="300" height="600">
+<img src="https://i.imgur.com/jQ1fNCR.jpg" width="300" height="600">
+<img src="https://i.imgur.com/RM7TzeJ.jpg" width="300" height="600">
 ## References
 * 參考網址
     * https://marketingliveincode.com/?page_id=2532
