@@ -15,7 +15,7 @@ line_bot_api = LineBotApi('X3H4BMqZpxzTXNbw3XqHHMafRhJhfNnbDznETttFRI19E0N0+7fQ4
 # 必須放上自己的Channel Secret
 handler = WebhookHandler('7ebb16631a483de7a45a7256de39310b')
 
-##line_bot_api.push_message('U79595215c0522df0d60e603f9bbd925a', TextSendMessage(text='今天有錢買顯哪了嗎? 今天顯卡價格跌了嗎?'))
+line_bot_api.push_message('U79595215c0522df0d60e603f9bbd925a', TextSendMessage(text='今天有錢買顯哪了嗎? 今天顯卡價格跌了嗎?'))
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
@@ -70,7 +70,7 @@ def handle_message(event):
     elif re.match('最新消息',message):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='先放AMD的發布會，我在想想要放甚麼。\nhttps://youtu.be/xtrhHH0kQI0'))
     elif re.match('介紹',message):
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='顯示卡在電腦中負責了大部分的圖形運算，GPU是他最主要的核心運算。'))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='前言：\n顯卡不但能夠用在遊戲中呈現像是現實生活中的光影，還能用來做研究像是深度學習，甚至日以繼夜的挖礦之途，更不用說那發家致富的可能性，顯卡的珍貴已不用多提，人人都該至少有一張顯卡，如果能有兩張以上，那是多麼令人愉悅的一件事啊，所以時時刻刻了解顯卡的價格是必須的。\n\n主要：\n顯示卡在電腦中負責了大部分的圖形運算，GPU是他最主要的核心運算。'))
     elif re.match('test',message):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
     else:
