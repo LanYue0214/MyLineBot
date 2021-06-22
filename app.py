@@ -15,7 +15,7 @@ line_bot_api = LineBotApi('X3H4BMqZpxzTXNbw3XqHHMafRhJhfNnbDznETttFRI19E0N0+7fQ4
 # 必須放上自己的Channel Secret
 handler = WebhookHandler('7ebb16631a483de7a45a7256de39310b')
 
-###line_bot_api.push_message('U79595215c0522df0d60e603f9bbd925a', TextSendMessage(text='你可以開始了'))
+line_bot_api.push_message('U79595215c0522df0d60e603f9bbd925a', TextSendMessage(text='你可以開始了'))
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
@@ -39,23 +39,21 @@ def callback():
 ##### 基本上程式編輯都在這個function #####
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    #message = TextSendMessage(text=event.message.text)
-    #line_bot_api.reply_message(event.reply_token,message)
-    mtext = event.message.text
-    if re.match('原價屋',mtext):
+    message = event.message.text
+    if re.match('原價屋',message):
         try:
-            message = ImageSendMessage(
+            re_message = ImageSendMessage(
                 base_url="https://i.imgur.com/J90bQis.jpg",
                 base_size=BaseSize(height=1040, width=1040)
                 #original_content_url="https://i.imgur.com/J90bQis.jpg",
                 #preview_image_url="https://i.imgur.com/J90bQis.jpg"
             )
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(message))
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(re_message))
         except:
             line_bot_api.reply_message(event.reply_token,TextSendMessage('Error!'))
-    elif re.match('Pchome',mtext):
+    elif re.match('Pchome',message):
         try:
-            message = [
+            re_message = [
                 URIImagemapAction(# 超連結
                     link_uri='https://24h.pchome.com.tw/region/DRAD',
                 ),
@@ -64,20 +62,19 @@ def handle_message(event):
                     base_size=BaseSize(height=1040, width=1040)
                 )
             ]
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(message))
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(re_message))
         except:
             line_bot_api.reply_message(event.reply_token,TextSendMessage('Error!'))
-    elif mtext == '蝦皮':
+    elif message == '蝦皮':
         try:
-            message = ImageSendMessage(
-                original_content_url="https://i.imgur.com/J90bQis.jpg",
-                preview_image_url="https://i.imgur.com/J90bQis.jpg"
+            re_message = TextSendMessage(
+                text = "我是蝦皮啦!"
             )
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(message))
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(re_message))
         except:
             line_bot_api.reply_message(event.reply_token,TextSendMessage('Error!'))
     else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(mtext))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(message))
 
 #主程式
 import os
