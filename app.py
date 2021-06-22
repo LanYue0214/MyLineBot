@@ -65,15 +65,16 @@ def handle_message(event):
         )
             line_bot_api.reply_message(event.reply_token, buttons_template_message)
     elif re.match('蘇媽今天發布了什麼',message):
-        video_message = VideoSendMessage(
-            original_content_url='https://i.imgur.com/9L1opKw.mp4',
-            preview_image_url='https://i.imgur.com/yebDeyq.png'
-        )
-        line_bot_api.reply_message(event.reply_token, video_message)
+        #video_message = VideoSendMessage(
+        #    original_content_url='https://i.imgur.com/9L1opKw.mp4',
+        #    preview_image_url='https://i.imgur.com/yebDeyq.png'
+        #)
+        #line_bot_api.reply_message(event.reply_token, video_message)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='https://youtu.be/xtrhHH0kQI0'))
     elif re.match('test',message):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
     else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='很抱歉，沒有收尋到所你輸入。\n請善用關鍵字功能，尋找到你需要的資訊:)'))
 
 #主程式
 import os
