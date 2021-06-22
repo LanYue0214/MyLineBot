@@ -15,7 +15,7 @@ line_bot_api = LineBotApi('X3H4BMqZpxzTXNbw3XqHHMafRhJhfNnbDznETttFRI19E0N0+7fQ4
 # 必須放上自己的Channel Secret
 handler = WebhookHandler('7ebb16631a483de7a45a7256de39310b')
 
-line_bot_api.push_message('U79595215c0522df0d60e603f9bbd925a', TextSendMessage(text='今天有錢買顯哪了嗎? 今天顯卡價格跌了嗎?'))
+##line_bot_api.push_message('U79595215c0522df0d60e603f9bbd925a', TextSendMessage(text='今天有錢買顯哪了嗎? 今天顯卡價格跌了嗎?'))
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
@@ -66,18 +66,29 @@ def handle_message(event):
             line_bot_api.reply_message(event.reply_token, buttons_template_message)
     elif re.match('Pchome',message):
         try:
-            re_message = ImageSendMessage(
-                original_content_url="https://i.imgur.com/b2rFB7q.png",
-                preview_image_url="https://i.imgur.com/b2rFB7q.png"
+            re_message = ImagemapSendMessage(
+                actions=[
+                    ImageSendMessage(
+                        original_content_url="https://i.imgur.com/b2rFB7q.png",
+                        preview_image_url="https://i.imgur.com/b2rFB7q.png"
+                    ),
+                    URIImagemapAction(
+                        link_uri="https://24h.pchome.com.tw/region/DRAD"
+                    )
+                ]
             )
             line_bot_api.reply_message(event.reply_token,re_message)
         except:
             line_bot_api.reply_message(event.reply_token,TextSendMessage('Error!'))
     elif message == '蝦皮':
-        re_message = TextSendMessage(
-            text = "我是蝦皮啦!"
-        )
-        line_bot_api.reply_message(event.reply_token,re_message)
+        try:
+            re_message = ImageSendMessage(
+                original_content_url="https://i.imgur.com/Yz7Vwm2.png",
+                preview_image_url="https://i.imgur.com/Yz7Vwm2.png"
+            )
+            line_bot_api.reply_message(event.reply_token,re_message)
+        except:
+            line_bot_api.reply_message(event.reply_token,TextSendMessage('Error!'))
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
 
