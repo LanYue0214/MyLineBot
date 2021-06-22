@@ -66,13 +66,10 @@ def handle_message(event):
         except:
             line_bot_api.reply_message(event.reply_token,TextSendMessage('Error!'))
     elif message == '蝦皮':
-        try:
-            re_message = TextSendMessage(
-                text = "我是蝦皮啦!"
-            )
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(re_message))
-        except:
-            line_bot_api.reply_message(event.reply_token,TextSendMessage('Error!'))
+        re_message = TextSendMessage(
+            text = "我是蝦皮啦!"
+        )
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(re_message))
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(message))
 
