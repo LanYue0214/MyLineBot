@@ -1,6 +1,5 @@
 #載入LineBot所需要的套件
 from flask import Flask, request, abort
-
 from linebot import (
     LineBotApi, WebhookHandler
 )
@@ -46,18 +45,25 @@ def handle_message(event):
     if re.match('原價屋',message):
         try:
             message = ImageSendMessage(
-                original_content_url="https://i.imgur.com/J90bQis.jpg",
-                preview_image_url="https://i.imgur.com/J90bQis.jpg"
+                base_url="https://i.imgur.com/J90bQis.jpg",
+                base_size=BaseSize(height=1040, width=1040)
+                #original_content_url="https://i.imgur.com/J90bQis.jpg",
+                #preview_image_url="https://i.imgur.com/J90bQis.jpg"
             )
             line_bot_api.reply_message(event.reply_token,TextSendMessage(message))
         except:
             line_bot_api.reply_message(event.reply_token,TextSendMessage('Error!'))
     elif re.match('Pchome',message):
         try:
-            message = URIImagemapAction(# 超連結
-                link_uri='https://marketingliveincode.com/',
-                area=ImagemapArea(x=0, y=0, width=520, height=1040)
-            )
+            message = [
+                URIImagemapAction(# 超連結
+                    link_uri='https://24h.pchome.com.tw/region/DRAD',
+                ),
+                ImageSendMessage(
+                    base_url="https://i.imgur.com/b2rFB7q.png",
+                    base_size=BaseSize(height=1040, width=1040)
+                )
+            ]
             line_bot_api.reply_message(event.reply_token,TextSendMessage(message))
         except:
             line_bot_api.reply_message(event.reply_token,TextSendMessage('Error!'))
