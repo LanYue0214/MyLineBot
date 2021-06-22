@@ -1,19 +1,19 @@
 # 我的LINEBOT 顯卡價格
 一個方便我差看顯卡的LINE BOT
-# Build Process 
+## Build Process 
 * 加入LINE好友
 * ![](https://i.imgur.com/qJvS6Gu.png)
 
-# Introduction 
+## Introduction 
 顯卡不但能夠用在遊戲中呈現像是現實生活中的光影，還能用來做研究像是深度學習，甚至日以繼夜的挖礦之途，更不用說那發家致富的可能性，顯卡的珍貴已不用多提，人人都該至少有一張顯卡，如果能有兩張以上，那是多麼令人愉悅的一件事啊，所以時時刻刻了解顯卡的價格是必須的。以下為LINEBOT包含的功能:
 1. 查詢2021顯卡的排行榜
 2. 查詢顯卡價格
 3. 商場連結直接下單
-# Methods 
+## Methods 
 
 
 
-# Code
+## Code
     from flask import Flask, request, abort
     from linebot import (
         LineBotApi, WebhookHandler
@@ -99,9 +99,9 @@
         port = int(os.environ.get('PORT', 5000))
         app.run(host='0.0.0.0', port=port) #0.0.0.0 all people could connect to this robot
 
-# Results 
+## Results 
 
-# References
+## References
 * 參考網址
     * https://marketingliveincode.com/?page_id=2532
 
