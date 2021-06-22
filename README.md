@@ -100,7 +100,7 @@
         app.run(host='0.0.0.0', port=port) #0.0.0.0 all people could connect to this robot
 
 ## Results 
-![](https://i.imgur.com/8sIW7jW.jpg)
+<img src="https://i.imgur.com/8sIW7jW.jpg" width="300" height="600">
 
 ![](https://i.imgur.com/a8HGJ7i.jpg)
 ![](https://i.imgur.com/uf9yv05.jpg)
