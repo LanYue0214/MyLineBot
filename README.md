@@ -1,4 +1,4 @@
-# 顯卡價格
+# 我的LINE BOT 顯卡價格
 一個方便我差看顯卡的LINE BOT
 
 *加入好友
@@ -88,8 +88,11 @@ def handle_message(event):
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
 
-#主程式
 import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port) #0.0.0.0 all people could connect to this robot
+
+
+#References
+*參考網址
