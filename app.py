@@ -65,21 +65,20 @@ def handle_message(event):
         )
             line_bot_api.reply_message(event.reply_token, buttons_template_message)
     elif re.match('Pchome',message):
-        try:
-            re_message = ImagemapSendMessage(
-                actions=[
-                    ImageSendMessage(
-                        original_content_url="https://i.imgur.com/b2rFB7q.png",
-                        preview_image_url="https://i.imgur.com/b2rFB7q.png"
-                    ),
-                    URIImagemapAction(
-                        link_uri="https://24h.pchome.com.tw/region/DRAD"
+        image_carousel_template_message = TemplateSendMessage(
+             alt_text='免費教學影片',
+             template=ImageCarouselTemplate(
+                columns=[
+                    ImageCarouselColumn(
+                        image_url='https://i.imgur.com/b2rFB7q.png',
+                        action=PostbackAction(
+                            label='Pchome'
+                        )
                     )
                 ]
             )
-            line_bot_api.reply_message(event.reply_token,re_message)
-        except:
-            line_bot_api.reply_message(event.reply_token,TextSendMessage('Error!'))
+        )
+        line_bot_api.reply_message(event.reply_token, image_carousel_template_message)
     elif message == '蝦皮':
         try:
             re_message = ImageSendMessage(
