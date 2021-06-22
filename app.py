@@ -41,8 +41,8 @@ def callback():
 def handle_message(event):
     #message = TextSendMessage(text=event.message.text)
     #line_bot_api.reply_message(event.reply_token,message)
-    message = text=event.message.text
-    if re.match('原價屋',message):
+    mtext = text=event.message.text
+    if re.match('原價屋',mtext):
         try:
             message = ImageSendMessage(
                 base_url="https://i.imgur.com/J90bQis.jpg",
@@ -53,7 +53,7 @@ def handle_message(event):
             line_bot_api.reply_message(event.reply_token,TextSendMessage(message))
         except:
             line_bot_api.reply_message(event.reply_token,TextSendMessage('Error!'))
-    elif re.match('Pchome',message):
+    elif re.match('Pchome',mtext):
         try:
             message = [
                 URIImagemapAction(# 超連結
@@ -68,7 +68,7 @@ def handle_message(event):
         except:
             line_bot_api.reply_message(event.reply_token,TextSendMessage('Error!'))
     else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(message))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(mtext))
 
 #主程式
 import os
