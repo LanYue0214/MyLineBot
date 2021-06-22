@@ -68,7 +68,14 @@ def handle_message(event):
         except:
             line_bot_api.reply_message(event.reply_token,TextSendMessage('Error!'))
     elif mtext == '蝦皮':
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(mtext))
+        try:
+            message = ImageSendMessage(
+                original_content_url="https://i.imgur.com/J90bQis.jpg",
+                preview_image_url="https://i.imgur.com/J90bQis.jpg"
+            )
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(message))
+        except:
+            line_bot_api.reply_message(event.reply_token,TextSendMessage('Error!'))
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(mtext))
 
