@@ -65,6 +65,16 @@ def handle_message(event):
         )
             line_bot_api.reply_message(event.reply_token, buttons_template_message)
     elif re.match('原價屋',message):
+        message = [
+            {
+                "type": "image",
+                "originalContentUrl":"https://i.imgur.com/J90bQis.jpg",
+                "previewImageUrl": "https://i.imgur.com/J90bQis.jpg"
+            },
+            {
+                "type": "text",
+                "text": "https://www.coolpc.com.tw/tw/product-category/gpu/"
+        }]
         line_bot_api.reply_message(event.reply_token,TextSendMessage('https://www.coolpc.com.tw/tw/product-category/gpu/'))
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
