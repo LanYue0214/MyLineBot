@@ -64,4 +64,10 @@
         * line-bot-sdk
         * bs4
         * flask
-        * 
+        * pymongo
+        * datetime
+        * pandas
+        * SnowNLP
+        * emoji
+        * pyshorteners
+        * scipy
