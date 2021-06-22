@@ -59,5 +59,9 @@
 * 參考網址
     * https://marketingliveincode.com/?page_id=2532
 * API
-    *LINEBOT
-    *
+    * LINEBOT
+* packages
+        * line-bot-sdk
+        * bs4
+        * flask
+        * 
