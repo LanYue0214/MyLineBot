@@ -44,7 +44,7 @@ def handle_message(event):
             buttons_template_message = TemplateSendMessage(
             alt_text='這個看不到',
             template=ButtonsTemplate(
-                thumbnail_image_url='https://i.imgur.com/wpM584d.jpg',
+                thumbnail_image_url='https://i.imgur.com/siRPgJZ.jpg',
                 title='顯卡買起來啦',
                 text='選單功能－TemplateSendMessage',
                 actions=[
