@@ -30,7 +30,7 @@
         else
             return 很抱歉，沒有收尋到所你輸入。\n請善用關鍵字功能，尋找到你需要的資訊
 * flow chart
-<img src="https://i.imgur.com/C5qNEC8.png" width="300" height="600">
+![](https://i.imgur.com/C5qNEC8.png)
 
 ## Results 
 原始畫面:
