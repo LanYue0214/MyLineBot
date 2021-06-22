@@ -64,7 +64,7 @@ def handle_message(event):
         )
             line_bot_api.reply_message(event.reply_token, buttons_template_message)
     elif re.match('關鍵字',message):
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='目前有以下關鍵字\n【關鍵字】所有的關鍵字\n【商場】購買管道在這裡!!\n【介紹】顯卡是啥?能吃嗎?\n【最新消息】蘇媽今天發布了甚麼?\n【天梯圖】2021年度最新顯卡天梯圖\n----開發中，請稍後----'))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='目前有以下關鍵字\n【關鍵字】所有的關鍵字\n【商場】購買管道在這裡!!\n【介紹】顯卡是啥?能吃嗎?\n【最新消息】AMD今天更新了嗎?\n【天梯圖】2021年度最新顯卡天梯圖\n----開發中，請稍後----'))
     elif re.match('蘇媽今天發布了什麼',message):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='https://youtu.be/xtrhHH0kQI0'))
     elif re.match('最新消息',message):
