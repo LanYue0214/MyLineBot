@@ -43,12 +43,12 @@ def handle_message(event):
     if re.match('原價屋',message):
         try:
             re_message = ImageSendMessage(
-                base_url="https://i.imgur.com/J90bQis.jpg",
-                base_size=BaseSize(height=1040, width=1040)
-                #original_content_url="https://i.imgur.com/J90bQis.jpg",
-                #preview_image_url="https://i.imgur.com/J90bQis.jpg"
+                #base_url="https://i.imgur.com/J90bQis.jpg",
+                #base_size=BaseSize(height=1040, width=1040)
+                original_content_url="https://i.imgur.com/J90bQis.jpg",
+                preview_image_url="https://i.imgur.com/J90bQis.jpg"
             )
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(text=re_message))
+            line_bot_api.reply_message(event.reply_token,re_message)
         except:
             line_bot_api.reply_message(event.reply_token,TextSendMessage('Error!'))
     elif re.match('@Pchome',message):
@@ -64,9 +64,9 @@ def handle_message(event):
         re_message = TextSendMessage(
             text = "我是蝦皮啦!"
         )
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=re_message))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(re_message))
     else:
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(message))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
 
 #主程式
 import os
