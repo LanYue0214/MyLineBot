@@ -46,9 +46,10 @@ def handle_message(event):
     if re.match('原價屋',message):
         try:
             message = ImageSendMessage(
-                original_content_url="https://i.imgur.com/J90bQis.jpg"
+                original_content_url="https://i.imgur.com/J90bQis.jpg",
                 preview_image_url="https://i.imgur.com/J90bQis.jpg"
             )
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(message))
         except:
             line_bot_api.reply_message(event.reply_token,TextSendMessage('Error!'))
     else:
