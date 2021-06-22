@@ -64,7 +64,7 @@ def handle_message(event):
             )
         )
             line_bot_api.reply_message(event.reply_token, buttons_template_message)
-    elif re.match('蘇媽今天發布了什麼',message):
+    elif re.match('蘇媽今天發布了什麼'or'最新消息',message):
         #video_message = VideoSendMessage(
         #    original_content_url='https://i.imgur.com/9L1opKw.mp4',
         #    preview_image_url='https://i.imgur.com/yebDeyq.png'
