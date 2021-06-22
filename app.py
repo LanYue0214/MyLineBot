@@ -71,8 +71,8 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='AMD官網。\n'+'https://www.amd.com/zh-hant'))
     elif re.match('介紹',message):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='前言：\n顯卡不但能夠用在遊戲中呈現像是現實生活中的光影，還能用來做研究像是深度學習，甚至日以繼夜的挖礦之途，更不用說那發家致富的可能性，顯卡的珍貴已不用多提，人人都該至少有一張顯卡，如果能有兩張以上，那是多麼令人愉悅的一件事啊，所以時時刻刻了解顯卡的價格是必須的。\n\n主要：\n顯示卡在電腦中負責了大部分的圖形運算，GPU是他最主要的核心運算。'))
-    elif re.match('test',message):
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
+    elif re.match('天梯圖',message):
+        line_bot_api.reply_message(event.reply_token, TextSendMessage())
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='很抱歉，沒有收尋到所你輸入。\n請善用關鍵字功能，尋找到你需要的資訊:)'))
 
