@@ -42,11 +42,11 @@ def handle_message(event):
     message = event.message.text
     if re.match('商場',message):
             buttons_template_message = TemplateSendMessage(
-            alt_text='這個看不到',
+            alt_text='顯卡好貴，沒錢QQ',#cannot be see
             template=ButtonsTemplate(
                 thumbnail_image_url='https://i.imgur.com/siRPgJZ.jpg',
                 title='顯卡買起來啦',
-                text='選單功能－TemplateSendMessage',
+                text='GTX3090值得你擁有',
                 actions=[
                     URIAction(
                         label='原價屋',
