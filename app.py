@@ -16,7 +16,7 @@ line_bot_api = LineBotApi('X3H4BMqZpxzTXNbw3XqHHMafRhJhfNnbDznETttFRI19E0N0+7fQ4
 # 必須放上自己的Channel Secret
 handler = WebhookHandler('7ebb16631a483de7a45a7256de39310b')
 
-line_bot_api.push_message('U79595215c0522df0d60e603f9bbd925a', TextSendMessage(text='你可以開始了'))
+###line_bot_api.push_message('U79595215c0522df0d60e603f9bbd925a', TextSendMessage(text='你可以開始了'))
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
@@ -43,7 +43,20 @@ def handle_message(event):
     #message = TextSendMessage(text=event.message.text)
     #line_bot_api.reply_message(event.reply_token,message)
     message = text=event.message.text
-    if re.match('告訴我秘密',message):
+    if re.match('原價屋',message):
+        imagemap_message = ImagemapSendMessage(
+             base_url='https://i.imgur.com/wpM584d.jpg',
+             alt_text='this is an imagemap',
+             base_size=BaseSize(height=1040, width=1040),
+             actions=[
+                 MessageImagemapAction(# 文字訊息
+                     text='戳我幹嘛！',
+                     area=ImagemapArea(
+                         x=520, y=0, width=520, height=1040
+                     )
+                 )
+             ]
+         )
         line_bot_api.reply_message(event.reply_token,TextSendMessage('才不告訴你哩！'))
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(message))
