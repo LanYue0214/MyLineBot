@@ -41,7 +41,7 @@ def callback():
 def handle_message(event):
     #message = TextSendMessage(text=event.message.text)
     #line_bot_api.reply_message(event.reply_token,message)
-    mtext = text=event.message.text
+    mtext = event.message.text
     if re.match('原價屋',mtext):
         try:
             message = ImageSendMessage(
@@ -67,6 +67,8 @@ def handle_message(event):
             line_bot_api.reply_message(event.reply_token,TextSendMessage(message))
         except:
             line_bot_api.reply_message(event.reply_token,TextSendMessage('Error!'))
+    elif mtext == '蝦皮':
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(mtext))
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(mtext))
 
