@@ -35,8 +35,7 @@ def callback():
 
     return 'OK'
 
-#訊息傳遞區塊
-##### 基本上程式編輯都在這個function #####
+#deal with message
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     message = event.message.text
@@ -69,7 +68,7 @@ def handle_message(event):
     elif re.match('蘇媽今天發布了什麼',message):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='https://youtu.be/xtrhHH0kQI0'))
     elif re.match('最新消息',message):
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='https://youtu.be/xtrhHH0kQI0'))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='先放AMD的發布會，我在想想要放甚麼。\nhttps://youtu.be/xtrhHH0kQI0'))
     elif re.match('介紹',message):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='顯示卡在電腦中負責了大部分的圖形運算，GPU是他最主要的核心運算。'))
     elif re.match('test',message):
