@@ -96,5 +96,5 @@ if __name__ == "__main__":
 
 #References
 * 參考網址
-    *https://marketingliveincode.com/?page_id=2532
+    * https://marketingliveincode.com/?page_id=2532
 
