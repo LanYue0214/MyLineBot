@@ -100,7 +100,12 @@
         app.run(host='0.0.0.0', port=port) #0.0.0.0 all people could connect to this robot
 
 ## Results 
+![](https://i.imgur.com/8sIW7jW.jpg)
 
+![](https://i.imgur.com/a8HGJ7i.jpg)
+![](https://i.imgur.com/uf9yv05.jpg)
+![](https://i.imgur.com/jQ1fNCR.jpg)
+![](https://i.imgur.com/RM7TzeJ.jpg)
 ## References
 * 參考網址
     * https://marketingliveincode.com/?page_id=2532
