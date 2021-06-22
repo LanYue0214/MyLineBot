@@ -57,14 +57,14 @@ def handle_message(event):
                 base_url="https://i.imgur.com/b2rFB7q.png",
                 base_size=BaseSize(height=1040, width=1040)
             )
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(text=re_message))
+            line_bot_api.reply_message(event.reply_token,re_message)
         except:
             line_bot_api.reply_message(event.reply_token,TextSendMessage('Error!'))
     elif message == '@蝦皮':
         re_message = TextSendMessage(
             text = "我是蝦皮啦!"
         )
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(re_message))
+        line_bot_api.reply_message(event.reply_token,re_message)
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
 
