@@ -52,6 +52,15 @@ def handle_message(event):
             line_bot_api.reply_message(event.reply_token,TextSendMessage(message))
         except:
             line_bot_api.reply_message(event.reply_token,TextSendMessage('Error!'))
+    elif re.match('Pchome',message):
+        try:
+            message = URIImagemapAction(# 超連結
+                link_uri='https://marketingliveincode.com/',
+                area=ImagemapArea(x=0, y=0, width=520, height=1040)
+            )
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(message))
+        except:
+            line_bot_api.reply_message(event.reply_token,TextSendMessage('Error!'))
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(message))
 
