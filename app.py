@@ -64,6 +64,8 @@ def handle_message(event):
             )
         )
             line_bot_api.reply_message(event.reply_token, buttons_template_message)
+    elif re.match('原價屋',message):
+        line_bot_api.reply_message(event.reply_token,TextSendMessage('https://www.coolpc.com.tw/tw/product-category/gpu/'))
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
 
