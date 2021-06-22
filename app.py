@@ -64,22 +64,12 @@ def handle_message(event):
             )
         )
             line_bot_api.reply_message(event.reply_token, buttons_template_message)
-    elif re.match('原價屋',message):
-        buttons_template_message = TemplateSendMessage(
-            alt_text='原價屋網址',#cannot be see
-            template=ButtonsTemplate(
-                thumbnail_image_url='https://i.imgur.com/J90bQis.jpg',
-                title='原價屋網址',
-                #text='GTX3090值得你擁有',
-                actions=[
-                    URIAction(
-                        label='原價屋',
-                        uri='https://www.coolpc.com.tw/tw/product-category/gpu/'
-                    )
-                ]
-            )
+    elif re.match('蘇媽今天發布了什麼',message):
+        video_message = VideoSendMessage(
+            original_content_url='https://youtu.be/xtrhHH0kQI0',
+            preview_image_url='https://i.imgur.com/yebDeyq.png'
         )
-        line_bot_api.reply_message(event.reply_token, buttons_template_message)
+        line_bot_api.reply_message(event.reply_token, video_message)
     else:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
 
